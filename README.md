@@ -1,0 +1,1 @@
+# django_multi_tenant_ai_writer
