@@ -42,6 +42,9 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "drf_redesign",
     "rest_framework",
+    "rest_framework.authtoken",
+    "rest_framework_simplejwt",
+    "dj_rest_auth",
     "django_filters",
     "drf_spectacular",
     "drf_spectacular_sidecar",
@@ -70,6 +73,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+EMAIL_BACKEND="django.core.mail.backends.console.EmailBackend"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
@@ -154,6 +159,8 @@ APP_DOMAIN = env("APP_DOMAIN", default="http://localhost:8000")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
+from config.settings.dj_rest_auth import *
 from config.settings.drf_spectacular import *
+from config.settings.jwt import *
 from config.settings.rest_framework import *
 from config.settings.storages import *

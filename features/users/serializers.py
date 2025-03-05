@@ -6,9 +6,9 @@ class BaseUserSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = BaseUser
-        fields = ['id', 'email', 'first_name', 'last_name']
+        fields = ["id", "email", "first_name", "last_name"]
         extra_kwargs = {
-            'email': {'read_only': True},
+            "email": {"read_only": True},
         }
 
 class UserListSerializer(serializers.ModelSerializer):
@@ -24,9 +24,10 @@ class UserListFilterSerializer(serializers.Serializer):
 
 class UserDetailSerializer(BaseUserSerializer):
     """Serializer for retrieving user details."""
-    pass
+    class Meta(BaseUserSerializer.Meta):
+        fields = BaseUserSerializer.Meta.fields + ["is_admin"]
 
-class UserCreateSerializer(serializers.ModelSerializer):
+class UserRegisterSerializer(serializers.ModelSerializer):
     """Serializer for user registration with password confirmation."""
     password1 = serializers.CharField(write_only=True, min_length=8, style={'input_type': 'password'})
     password2 = serializers.CharField(write_only=True, min_length=8, style={'input_type': 'password'})

@@ -45,9 +45,9 @@ class UserDetailApi(generics.RetrieveAPIView):
     queryset = BaseUser.objects.filter(is_active=True)
     serializer_class = UserDetailSerializer
 
-class UserCreateApi(generics.CreateAPIView):
+class UserRegisterApi(generics.CreateAPIView):
     queryset = BaseUser.objects.all()
-    serializer_class = UserCreateSerializer
+    serializer_class = UserRegisterSerializer
 
 
 class UserUpdateApi(generics.RetrieveUpdateAPIView):
