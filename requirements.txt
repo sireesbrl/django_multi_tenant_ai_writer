@@ -5,5 +5,7 @@ django-environ
 django-storages
 whitenoise
 djangorestframework
+djangorestframework-simplejwt
+dj-rest-auth
 drf-redesign
 drf-spectacular[sidecar]
