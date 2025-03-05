@@ -1,0 +1,9 @@
+django
+django-cors-headers
+django-filter
+django-environ
+django-storages
+whitenoise
+djangorestframework
+drf-redesign
+drf-spectacular[sidecar]
